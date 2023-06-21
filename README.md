@@ -31,10 +31,10 @@ $ kubectl create -f kubectl create -f sample-webapp-service.yaml
 
 `locust-master`和`locust-work` controller使用的都是`locust-tasks` docker镜像。你可以直接下载`gcr.io/cloud-solutions-images/locust-tasks`，也可以自己编译。自己编译大概要花几分钟时间，镜像大小为820M。
 
-    $ docker build -t index.tenxcloud.com/jimmy/locust-tasks:latest .
-    $ docker push index.tenxcloud.com/jimmy/locust-tasks:latest
+    $ docker build -t docker.io/sunmonth/locust-tasks:latest .
+    $ docker push docker.io/sunmonth/locust-tasks:latest
 
-**注意**：我使用的是时速云的镜像仓库。
+**注意**：我使用的是docker镜像仓库。
 
 每个controller的yaml的`spec.template.spec.containers.image` 字段指定的是我的镜像：
 
